@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="match_parent"
-        android:id="@+id/contentHolder">
+        android:id="@+id/authHolder">
 
         <TextView
             android:layout_width="match_parent"
@@ -50,9 +50,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Authorize"
-            android:id="@+id/button"
+            android:id="@+id/btnAuthorize"
             android:background="@color/colorPrimary"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:onClick="authorize" />
     </LinearLayout>
 
     <LinearLayout
@@ -76,7 +77,57 @@
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:id="@+id/spinner" />
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/chatHolder">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/logHolder"
+            android:layout_above="@+id/etxtInput">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/textView" />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etxtInput"
+            android:layout_gravity="bottom"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:maxLines="3"
+            android:layout_alignParentTop="false"
+            android:layout_marginBottom="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/btnSend" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:id="@+id/btnSend"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/logHolder"
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimary"
+            android:onClick="send" />
+
+    </RelativeLayout>
 </RelativeLayout>

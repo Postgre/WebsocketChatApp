@@ -4,4 +4,6 @@ public interface WebsocketActivity {
 
     void setState(int state);
 
+    void addToLog(String s);
+
 }
